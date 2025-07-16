@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Membership Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 30px 15px;
+      background: linear-gradient(135deg, #f3e7e9 0%, #e3eeff 100%);
+      animation: backgroundShift 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes backgroundShift {
+      0% {
+        background-position: left top;
+      }
+
+      100% {
+        background-position: right bottom;
+      }
+    }
+
+    form {
+      background: #fff;
+      max-width: 650px;
+      margin: auto;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease forwards;
+      transform: scale(0.98);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #0a3d62;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+      animation: glow 2s infinite ease-in-out;
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 10px #00a8ff, 0 0 20px #00a8ff;
+      }
+
+      50% {
+        text-shadow: 0 0 20px #0097e6, 0 0 30px #0097e6;
+      }
+    }
+
+    p {
+      text-align: center;
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+      color: #2f3640;
+    }
+
+    input[type="text"],
+    input[type="file"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: 0.3s ease;
+      background-color: #f8f9fa;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #0097e6;
+      box-shadow: 0 0 10px rgba(0, 151, 230, 0.3);
+      outline: none;
+    }
+
+    .radio-group label {
+      display: inline-block;
+      margin-right: 20px;
+      font-weight: normal;
+      color: #444;
+    }
+
+    input[type="radio"] {
+      margin-right: 8px;
+      transform: scale(1.2);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(to right, #00a8ff, #9c88ff);
+      border: none;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 168, 255, 0.3);
+    }
+
+    .note {
+      text-align: center;
+      font-style: italic;
+      color: #444;
+      margin-top: 25px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      form {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <h1>MEMBERSHIP FORM</h1>
+    <p>Greetings, I am Muhammad Moiz, the owner of this hotel and current CEO of the entire management.<br>
+      Here is the list of available services.</p>
+
+    <label>Full Name:</label>
+    <input type="text" name="full_name" required>
+
+    <label>Instagram or Facebook Page:</label>
+    <input type="text" name="social_media">
+
+    <label>WhatsApp Number:</label>
+    <input type="text" name="whatsapp_number" required>
+
+    <label>Which Membership do you need?</label>
+    <select name="service" required>
+      <option value="instagram_post">Instagram Post</option>
+      <option value="reels_editing">Reels Editing</option>
+      <option value="youtube_thumbnail">YouTube Thumbnail</option>
+      <option value="resume_design">Resume Design</option>
+      <option value="logo_banner">Logo/Banner</option>
+      <option value="java_help">Java Project Help</option>
+      <option value="python_script">Python Script Creation</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label>Do you want a free sample?</label>
+    <div class="radio-group">
+      <label><input type="radio" name="free_sample" value="yes" required> Yes</label>
+      <label><input type="radio" name="free_sample" value="no"> No</label>
+    </div>
+
+    <label>Write your ideas/instructions:</label>
+    <textarea name="instructions" rows="5"></textarea>
+
+    <label>Upload your files (images, videos, logo):</label>
+    <input type="file" name="files">
+
+    <label>Preferred Delivery Date:</label>
+    <input type="text" name="deadline">
+
+    <button type="submit">Submit Order</button>
+  </form>
+
+  <p class="note">After submitting, I’ll contact you within 30 minutes. You’re not just a client—you're family.</p>
+</body>
+
+</html>
